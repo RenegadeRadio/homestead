@@ -91,6 +91,20 @@ Then assign that provider and a model id on each Bot.
 
 Tool calling works best on models that support OpenAI `tools`. Homestead also parses fenced ` ```tool ` JSON so smaller local models can still act.
 
+## Comms: WhatsApp and Gmail replies
+
+The **Comms** tab shows reply drafts from the separate
+[comms agent](https://github.com/RenegadeRadio/DeepSeek-Agent), which watches a WhatsApp Business number and
+your Gmail inbox. Edit a draft and press **Send**, **Skip** it, or **Redo** it with an instruction.
+
+1. Run the comms agent and set `COMMS_API_APPROVE_TOKEN` (and optionally `COMMS_API_ASSIST_TOKEN`) there.
+2. In Homestead's `.env.local`, set `COMMS_AGENT_URL` and `COMMS_AGENT_APPROVE_TOKEN`, then restart.
+
+The approve token stays in Homestead's server environment. The browser and Bots never see it. To let a Bot read
+drafts and ask for redrafts (but not send), add a plugin in Settings → Plugins with base URL
+`http://127.0.0.1:8000/api/v1` and header `Authorization: Bearer <COMMS_API_ASSIST_TOKEN>`. Never give a Bot the
+approve token: plugin calls run without an approval step.
+
 ## Safety
 
 Default shell policy is **ask every time**. Require-approval rules always win. Do not paste passwords into chat — if a site needs a human, take over that step yourself.

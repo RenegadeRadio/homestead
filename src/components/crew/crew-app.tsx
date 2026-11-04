@@ -7,6 +7,7 @@ import { toast } from "sonner";
 import { ChatPane } from "@/components/crew/chat";
 import { ComputerPane } from "@/components/crew/computer";
 import { NewBotDialog, NewGroupDialog, RoutinesPane, SettingsPane, SkillsPane } from "@/components/crew/panels";
+import { CommsPane } from "@/components/crew/comms-pane";
 import { OutboxPane } from "@/components/crew/outbox-pane";
 import { Sidebar } from "@/components/crew/sidebar";
 import { Button } from "@/components/ui/button";
@@ -189,6 +190,10 @@ export function CrewApp() {
                 return result;
               }}
             />
+          </div>
+        ) : crew.view === "comms" ? (
+          <div className="flex-1 overflow-y-auto">
+            <CommsPane />
           </div>
         ) : (
           <div className="flex-1 overflow-y-auto">

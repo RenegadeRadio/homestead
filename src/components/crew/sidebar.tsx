@@ -2,6 +2,7 @@
 
 import {
   FolderTree,
+  Inbox,
   Monitor,
   Plus,
   Repeat,
@@ -85,6 +86,7 @@ export function Sidebar({
           {navBtn("skills", "Skills", <FolderTree className="size-3.5" />)}
           {navBtn("routines", "Routines", <Repeat className="size-3.5" />)}
           {navBtn("outbox", "Outbox", <Send className="size-3.5" />)}
+          {navBtn("comms", "Comms", <Inbox className="size-3.5" />)}
         </div>
 
         <Section
