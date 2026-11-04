@@ -12,7 +12,7 @@ import {
 } from "@/lib/client";
 import type { Bot, Conversation, CrewEvent, FileNode, Message, Store } from "@/lib/types";
 
-export type View = "chat" | "computer" | "skills" | "routines" | "outbox" | "settings";
+export type View = "chat" | "computer" | "skills" | "routines" | "outbox" | "comms" | "settings";
 
 function applyEventToStore(store: Store, event: CrewEvent, conversationId: string): Store {
   const next = {
