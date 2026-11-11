@@ -36,8 +36,7 @@ LinkedIn's terms restrict automated messaging. Keep Send behind approval and don
 **Use at your own risk.** Homestead is provided as is, with no warranty (see [LICENSE](LICENSE), MIT).
 
 - **LinkedIn and X do not allow automated use of their sites.** Their user agreements prohibit bots and automated
-  access. Using Homestead's browser on them can get your account restricted or banned. The author's own LinkedIn account
-  was temporarily restricted after about 280 page loads in an hour, with no messages sent at all.
+  access. Using Homestead's browser on them can get your account restricted or banned.
 - **Homestead is built to keep a person in charge**, not to send unattended. Every LinkedIn send waits for your approval in
   the Outbox. It also has daily and weekly invite caps, a page-load cap, randomised gaps between actions, a sending
   window, and a hold that stops all LinkedIn work when LinkedIn shows a login or checkpoint page. Those defaults
